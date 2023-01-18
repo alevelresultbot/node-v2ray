@@ -2,7 +2,6 @@
     "name": "v2ray-cyclic-deployment",
     "version": "1.0.0",
     "dependencies": {
-        "v2ray-core": "latest",
         "child_process": "latest"
     },
     "scripts": {
