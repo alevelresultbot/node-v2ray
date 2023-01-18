@@ -1,4 +1,4 @@
-const { Server } = require("v2ray-core");
+const { Server } = require("v2ray");
 const { execSync } = require("child_process");
 
 // Configure V2Ray
