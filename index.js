@@ -1,28 +1,11 @@
-const { Server } = require("v2ray");
 const { execSync } = require("child_process");
 
-// Configure V2Ray
-const config = {
-    inbound: {
-        port: 10000
-    },
-    outbound: {
-        protocol: "vmess",
-        settings: {
-            vnext: [{
-                address: process.env.V2RAY_DOMAIN,
-                port: 80,
-                users: [{
-                    id: "user-id",
-                    alterId: 64
-                }]
-            }]
-        }
-    }
-};
+// Update package list
+execSync("sudo apt-get update");
 
-const server = new Server(config);
-server.run();
+// Download and install V2Ray
+execSync("curl https://install.direct/go.sh | sudo bash");
 
-// Deploy to Cyclic
-execSync("cyclic-cli deploy --name v2ray --image v2ray/official --port 10000");
+// Start V2Ray service
+execSync("sudo systemctl start v2ray");
+console.log("V2Ray server started!");
