@@ -138,7 +138,4 @@ server {
 }
 `
 // 写入服务端配置文件和nginx配置文件,然后通过volume把客户端配置文件吐出来
-fs.writeFileSync("/app/test/config.json",JSON.stringify(server,null,4))
-fs.writeFileSync("/app/test/default.conf", nginxConf);
-fs.writeFileSync('/app/test/client.json', JSON.stringify(client, null, 4));
 console.log('write success!!!!!!!!!!!!!!!!!!!');
